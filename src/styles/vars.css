@@ -1,0 +1,59 @@
+:root {
+  --sq-color-white: #fff;
+  --sq-color-black: #000;
+  --colors: (
+    primary: #409eff,
+    success: #67c23e,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399    
+
+  );
+  @each $val,  $color in var(--colors) {
+    --sq-color-$(val): $(color);
+    @for $i from 1 to 9 by 2 {
+      --sq-color-$(val)-light-$(i): mix(#fff,$(color), .$(i))
+    }
+    --sq-color-$(val)-light-8: mix(#fff, $(color), 0.8)
+    --sq-color-$(val)-dark-2: mix(#000, $(color), 0.2)
+  }
+
+  --sq-bg-color: #ffffff;
+
+  --sq-component-size-large: 40px;
+  --sq-component-size: 32px;
+  --sq-component-size-small: 24px;
+
+  --sq-font-size-base: 14px;
+
+  --sq-input-border-color: #dcdfe6;
+  --sq-border-color: #dcdfe6;
+  --sq-border-radius-base: 4px;
+  --sq-text-color-regular: #606266;
+  --sq-border: 1px;
+  --sq-border-radius: 4px;
+  --sq-fill-color-blank: #ffffff;
+  --sq-fill-color-light: #f5f7fa;
+  --sq-fill-color-dark: #ebedf0;
+
+  --sq-transition-duration: 0.3s
+
+  --el-border-color:#dcdfe6 ;
+  --sq-text-color: #303133;
+  --sq-border-color-extra-light:#f2f6fc;
+  --sq-text-color-placeholder: #a8abb2;
+  --sq-disabled-text-color: var(--sq-text-color-placeholder);
+
+
+
+  --sq-checkbox-checked-bg-color: var(--sq-color-primary);
+  --sq-checkbox-checked-input-border-color: var(--sq-color-primary);
+  --sq-checkbox-input-border: var(--sq-border);
+  --sq-checkbox-border-radius: var(--sq-border-radius);
+  --sq-checkbox-bg-color: var(--sq-fill-color-blank);
+  --sq-checkbox-input-border-color: var(--sq-border-color);
+
+  --sq-checkbox-disabled-checked-input-fill: var(--sq-border-color-extra-light);
+  --sq-checkbox-disabled-checked-input-border-color: var(--sq-border-color);
+}
+

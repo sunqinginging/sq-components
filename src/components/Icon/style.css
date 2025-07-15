@@ -1,0 +1,16 @@
+.sq-icon {
+  --sq-icon-color: insert;
+  fill: currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--sq-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .sq-icon-$(val) {
+    --sq-icon-color: var(--sq-color-$(val));
+  }
+}

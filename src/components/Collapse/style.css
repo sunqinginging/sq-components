@@ -1,0 +1,9 @@
+.slide-enter-active,
+.slide-leave-active {
+  transition: height 0.3s;
+}
+
+.sq-collapse-item__content {
+  will-change: height;
+  color: green;
+}

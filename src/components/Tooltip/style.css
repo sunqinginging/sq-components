@@ -1,0 +1,38 @@
+.sq-tooltip {
+  --sq-tooltip-bg-color: #fff;
+  --sq-tooltip-border-color: #e4e7ed;
+
+  position: relative;
+  display: flex;
+}
+
+.sq-tooltip__trigger {
+  cursor: pointer;
+}
+
+.sq-tooltip__content {
+  background-color: var(--sq-tooltip-bg-color);
+  border: 1px solid var(--sq-tooltip-border-color);
+  /* box-shadow: 0 0 0 1px var(--sq-tooltip-border-color); */
+}
+
+#tooltip {
+  width: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background: #222; */
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 90%;
+}
+
+#arrow {
+  position: absolute;
+  background: var(--sq-tooltip-bg-color);
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+}

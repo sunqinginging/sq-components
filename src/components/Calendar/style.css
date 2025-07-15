@@ -1,0 +1,77 @@
+.sq-calendar {
+  width: 100%;
+
+  tr,
+  th,
+  td {
+    background-color: transparent !important;
+    border: none;
+  }
+
+  .sq-calendar-table {
+    /* table-layout: fixed; */
+    width: 100%;
+    display: table;
+
+    td {
+      border-right: 1px solid var(--sq-border-color);
+      border-bottom: 1px solid var(--sq-border-color);
+      vertical-align: top;
+    }
+
+    tr {
+      td:first-child {
+        border-left: 1px solid var(--sq-border-color);
+      }
+    }
+    tr:first-child {
+      td {
+        border-top: 1px solid var(--sq-border-color);
+      }
+    }
+  }
+
+  .sq-calendar-day {
+    box-sizing: border-box;
+    padding: 8px 8px;
+    height: 85px;
+    cursor: pointer;
+
+    &.prev,
+    &.next {
+      color: var(--sq-text-color-placeholder);
+    }
+
+    &.is-selected {
+      background-color: var(--sq-color-primary-light-8) !important;
+      color: var(--sq-color-primary);
+    }
+    &.is-today {
+      color: var(--sq-color-primary);
+    }
+
+    &:hover {
+      background-color: var(--sq-color-primary-light-8) !important;
+      color: var(--sq-color-primary);
+    }
+  }
+
+  .sq-calendar__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .sq-calendar__title {
+      color: var(--sq-text-color);
+    }
+
+    .sq-calendar__btn--group {
+      display: inline-flex;
+      align-items: center;
+      & > div {
+        margin: 0 10px;
+      }
+    }
+  }
+}

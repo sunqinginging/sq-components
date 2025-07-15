@@ -1,0 +1,10 @@
+:root {
+  --vp-c-brand-1: var(--sq-color-primary);
+  --vp-c-brand-2: var(--sq-color-primary-lght-3);
+  --vp-c-brand-3: var(--sq-color-primary-lght-5);
+  --vp-c-brand-soft: var(---sq-color-primary-lght-7);
+}
+
+.vitepress-demo-preview__element-plus__container {
+  overflow: visible;
+}

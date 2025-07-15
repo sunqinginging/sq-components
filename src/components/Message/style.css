@@ -1,0 +1,19 @@
+.sq-message {
+  width: max-content;
+  position: fixed;
+  left: 50%;
+  top: 30px;
+  height: 30px;
+  background-color: aliceblue;
+  color: #000;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s, opacity 0.3s, top 0.3s;
+}
+
+.sq-message.fade-enter-from,
+.sq-message.fade-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}
