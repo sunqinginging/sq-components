@@ -145,6 +145,10 @@ export default defineConfig({
               text: "Calendar日历",
               link: "/components/calendar",
             },
+            {
+              text: "Waterfall瀑布流",
+              link: "/components/waterfall",
+            },
           ],
         },
         {
@@ -162,7 +166,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: "github",
-        link: "https://sunqingest.github.io/sq-components-doc/",
+        link: "https://sunqinginging.github.io/sq-components-doc/",
       },
     ],
   },

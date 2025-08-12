@@ -13,7 +13,7 @@ hero:
       link: /guide/quickstart
     - theme: alt
       text: github
-      link: https://sunqingest.github.io/sq-components-doc/
+      link: https://sunqinginging.github.io/sq-components-doc/
 
 features:
   - title: vitepress

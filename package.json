@@ -1,6 +1,6 @@
 {
   "name": "sunqing-components",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Vue3 component library",
   "keywords": [
     "Component",
@@ -8,9 +8,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://sunqingest.github.io/sq-components-doc/"
+    "url": "https://github.com/sunqinginging/sq-components"
   },
-  "homepage": "https://sunqingest.github.io/sq-components/",
+  "homepage": "https://sunqinginging.github.io/sq-components-doc/",
   "type": "module",
   "files": [
     "dist"

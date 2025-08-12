@@ -1,0 +1,7 @@
+.sq-waterfall {
+  position: relative;
+}
+
+.sq-waterfall-item {
+  position: absolute;
+}
