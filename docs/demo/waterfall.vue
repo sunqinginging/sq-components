@@ -1,18 +1,72 @@
 <template>
-  <SqWaterfall :data="list" nodeKey="id">
-    <template #default="{ item, width }">
-      <div style="width: 100%">
-        <img :src="item.img" alt="" style="max-width: 100%; height: auto" />
-      </div>
-    </template>
-  </SqWaterfall>
+  <div style="height: 500px">
+    <SqInfinite v-model="loading" :isFinished="isFinished" @load="handleLoad">
+      <SqWaterfall :data="list" nodeKey="id" :column="4">
+        <template #default="{ item, width }">
+          <div style="width: 100%">
+            <img :src="item.img" alt="" style="max-width: 100%; height: auto" />
+          </div>
+        </template>
+      </SqWaterfall>
+    </SqInfinite>
+  </div>
 </template>
 
 <script setup>
 import SqWaterfall from "@/components/Waterfall/Waterfall.vue";
+import SqInfinite from "@/components/Infinite/Infinite.vue";
 import { ref } from "vue";
 
-const list = ref([
+const loading = ref(false);
+const isFinished = ref(false);
+const handleLoad = () => {
+  mockGetList();
+};
+
+const query = {
+  page: 1,
+  size: 20,
+};
+
+const mockGetList = async () => {
+  if (isFinished.value) {
+    return;
+  }
+  if (list.value.length > 0) {
+    query.page += 1;
+  }
+  let res = await mockRequest(query);
+  if (query.page == 1) {
+    list.value = res;
+  } else {
+    list.value.push(...res);
+  }
+  if (list.value.length > 88) {
+    isFinished.value = true;
+  }
+  loading.value = false;
+};
+
+const mockRequest = (query) => {
+  let list = [];
+  for (let i = 0; i < query.size; i++) {
+    let imgIndex = Math.floor(Math.random() * 5);
+    let imgUrl = imgList[imgIndex].img;
+    let item = {
+      id: (query.page - 1) * query.size + i + 1,
+      title: `哈哈哈${(query.page - 1) * query.size + i + 1}`,
+      img: imgUrl,
+    };
+    list.push(item);
+  }
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(list);
+    }, 1000);
+  });
+};
+
+const imgList = [
   {
     id: 1,
     title: "哈哈哈哈啊哈哈哈哈呵呵呵呵呵呵呵呵呵呵",
@@ -48,5 +102,7 @@ const list = ref([
     title: "哈哈哈哈啊哈哈哈哈呵呵呵呵呵呵呵呵呵呵",
     img: "https://img0.baidu.com/it/u=15396030,1143539239&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",
   },
-]);
+];
+
+const list = ref([]);
 </script>
